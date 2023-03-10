@@ -1,0 +1,75 @@
+.container {
+    background-color: #000;
+    width: 425px;
+    border-radius:25px;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    font-size: 4rem;
+    font-family: 'Arial';
+    font-weight: 600;
+    position: relative;
+    display:inline-block;
+    transition: filter .5s, font-size .5s;
+}
+
+
+
+ul:hover li a {
+    filter: blur(4px);
+    color: rgb(192, 192, 192);
+}
+
+
+
+
+ul {
+    padding-left: 0;
+    margin-left: 50px;
+    overflow: hidden;
+    
+}
+
+ul li:hover a{
+    font-size: 4.3rem;
+    color: white;
+    filter: blur(0px);
+    animation: revealText 3s;
+}
+
+
+@keyframes revealText {
+    from {
+        transform: translateX(-30%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+li a:before {
+    position: absolute;
+    content: '';
+    bottom: 0.1em;
+    left: 0;
+    height: 1px;
+    border-bottom: 3px solid white;
+    width:100%;
+    transform: translateX(-107%);
+}
+
+li:hover a:before {
+    display:inline-block;
+    animation: underlineText 3s;
+}
+
+@keyframes underlineText {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(-30%);
+    }
+}
